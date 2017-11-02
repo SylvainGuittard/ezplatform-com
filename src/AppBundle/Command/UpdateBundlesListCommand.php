@@ -108,6 +108,13 @@ class UpdateBundlesListCommand extends ContainerAwareCommand
      */
     private function getContentUpdateStruct(ContentService $contentService, $package)
     {
+        if ($package['stars'] == null) {
+            $package['stars'] = 0;
+        }
+        if ($package['forks'] == null) {
+            $package['forks'] = 0;
+        }
+
         $contentUpdateStruct = $contentService->newContentUpdateStruct();
         $contentUpdateStruct->initialLanguageCode = 'eng-GB';
         $contentUpdateStruct->setField('updated', (int)$package['updated']->format('U'));

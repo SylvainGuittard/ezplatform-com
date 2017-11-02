@@ -3,7 +3,9 @@
         <div class="bundle-card-line-data">
             <div class="bundle-card-line-information">
                 <h2>
-                    {{ ez_render_field(content, 'bundle_id') }}
+                    <a href="{{ ez_field_value(content, 'packagist_url') }}" title="See on Packagist.org">
+                        {{ ez_render_field(content, 'bundle_id') }}
+                    </a>
                 </h2>
                 <div class="bundle-card-line-description">
                     {{ ez_render_field(content, 'description') }}
